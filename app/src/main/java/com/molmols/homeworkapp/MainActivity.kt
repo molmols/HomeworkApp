@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             HomeworkAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavigationBarExample()
+                    NavigationBar()
                 }
             }
         }
@@ -46,22 +46,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Heyyy $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    HomeworkAppTheme {
-        Greeting("Android")
-    }
-}
-@Composable
-fun NavigationBarExample(modifier: Modifier = Modifier) {
+fun NavigationBar(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
     val startDestination = Destination.CALENDAR
     var selectedDestination by rememberSaveable { mutableIntStateOf(startDestination.ordinal) }
